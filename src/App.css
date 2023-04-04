@@ -1,38 +1,414 @@
+/* ****** Fonts ********* */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
+
+/* ********* General *********** */
+
+:root {
+    --black: #030303;
+    --medium-brown: #7A746E;
+    --light-cream: #FFF7F0;
+    --galactic-blue: #755CDE;
+    --summer-yellow: #F6A560;
+    --pink: #F39E9E;
+    --light-red: #EB7565;
+    --cyan: #61C4B7;
+    --dark-purple: #552049;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--light-cream);
+}
+
 .App {
-  text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-style: normal;
+    max-width: 69.375rem;
+    height: auto;
+    margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* ***** Navigation ******** */
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4.375rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px; 
+    padding: 0.875rem  2.8rem;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+     
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-btn {    
+    background: var(--black);
+    color: var(--light-cream);    
 }
 
-.App-link {
-  color: #61dafb;
+.nav-btn:hover{
+    background: var(--galactic-blue);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ******* Header ****** */
+header {
+    max-width: 47rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header > h1 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 71px;
+    color: var(--black);
+    margin-bottom: 1.4rem;
+}
+
+header > p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 5rem;
+    width: 95%;
+
+    color: var(--medium-brown);
+}
+
+/* ******** Grid section ******* */
+.grid {
+    
+    display: grid;
+    height: 22.75rem;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr 1fr;
+    place-content: center;
+    gap: 1.5rem;
+    grid-template-areas: 
+        "graphic-design graphic-design uxUi apps photography photography"
+        "graphic-design graphic-design illustrations illustrations motionGraphics motionGraphics" ;
+}
+
+.grid > .box > h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--light-cream);
+}
+
+.graphic-design{
+    grid-area: graphic-design;
+    background: var(--galactic-blue);
+}
+
+.uxUi{
+    grid-area: uxUi;
+    background: var(--summer-yellow);
+}
+
+.apps{
+    grid-area: apps;
+    background: var(--pink);
+}
+
+.photography{
+    grid-area: photography;
+    background: var(--cyan);
+}
+
+.illustrations{
+    grid-area: illustrations;
+    background: var(--light-red);
+}
+
+.motionGraphics{
+    grid-area: motionGraphics;
+    background: var(--dark-purple);
+}
+
+.box {
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        ". img"
+        "text text";
+}
+
+.box > .img {
+    grid-area: img;
+    justify-self: end;
+    
+}
+
+.box > .text {
+    grid-area: text;
+    align-self: end;
+}
+
+
+/* ******** Flex section *********** */
+.flex {
+    margin-top: 8.5rem;
+    display: flex;
+    justify-content: center;  
+    gap: 7.8rem;
+    width: 100%;
+    height: 27.8rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 50%;
+    
+}
+
+.about > h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    color: var(--black);
+    margin-bottom: 2.125rem;
+}
+
+.about > p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--medium-brown);
+    margin-bottom: 2rem;
+}
+
+.about-btn{
+    background: var(--light-red);
+    color: var(--light-cream);
+}
+
+.about-btn:hover{
+    background: var(--summer-yellow);
+}
+
+/* ***********  Work secion ********* */
+.tag {
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: var(--black);
+    margin-top: 11rem;
+}
+
+.img-car {
+    width:95%;
+    height: 22.5rem;
+}
+
+
+.imgslider {
+    margin-top: 3.5rem;
+    margin-left: 1rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3.5rem;
+}
+
+.slider-btn {
+    width: 4rem;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--light-cream);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.slider-btn:hover{
+    background:var(--galactic-blue);
+}
+
+
+/* *********** Book call section ********** */
+.book-call {
+    background: var(--black);
+    color: var(--light-cream);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 20rem;
+    padding: 4rem;
+    border-radius: 1rem;
+}
+
+.info-section {
+    width: 60%;
+}
+
+.info-section > h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 1rem;
+}
+
+.info-section > p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.book-call > button {
+    background: var(--light-red);
+    color: var(--light-cream);
+    height: 4rem;
+}
+
+.book-call > button:hover {
+    background:var(--summer-yellow)
+}
+
+/* ********* Footer ************** */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3.75rem;
+}
+
+/* *********** Media ********** */
+@media screen and (max-width: 700px) {
+    .book-call {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .info-section{
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .App {
+        padding: 1rem;
+    }
+
+    header > h1 {
+        font-size: 36px;
+        line-height: 45px;
+    }
+
+    header > p {
+        font-size: 16px;
+        line-height: 26px;
+        
+    }
+
+    .about > h2 {
+        font-size: 26px;
+        line-height: 33px;
+    }
+
+    .about > p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    
+
+    .grid {
+        margin-top: -2rem;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6,1fr);
+        grid-template-areas: 
+            "a a"
+            "a a"
+            "b c"
+            "d d"
+            "e e"
+            "f f";
+    }
+
+
+        
+    .graphic-design{
+        grid-area: a;
+        height: fit-content;
+    }
+
+    .uxUi{
+        grid-area: b;
+    }
+
+    .apps{
+        grid-area: c;
+    }
+
+    .photography{
+        grid-area: d;
+    }
+
+    .illustrations{
+        grid-area: e;
+    }
+
+    .motionGraphics{
+        grid-area: f;
+    }
+
+    .flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15rem;
+        margin-bottom: 15rem;
+        gap: 2rem;
+    }
+
+    .about{
+        text-align: center;
+        align-items: center;
+    }
+
+    .profile-img {
+        width: 300px;
+    }
+
+    .info-section > h2 {
+        font-size: 26px;
+        line-height: 33px;       
+    }
+
+    .info-section > p {
+        font-size: 16px;
+        line-height: 26px;      
+    }
 }
